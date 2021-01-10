@@ -5,16 +5,17 @@ Vue.use(VueRouter);
 import Login from '../views/Login.vue'
 import Home from '../views/Home.vue'
 
-import UserList from '../components/UserList.vue'
+import UserList from '../components/user/UserList.vue'
 
-const DataList = () => import('../components/DataList.vue')
-const RoleList = () => import('../components/RoleList.vue')
-const PermissionList = () => import('../components/PermissionList.vue')
-const GoodsList = () => import('../components/GoodsList.vue')
-const SortList = () => import('../components/SortList.vue')
-const GoodsSort = () => import('../components/GoodsSort.vue')
-const OrderList = () => import('../components/OrderList.vue')
+const DataList = () => import('../components/data_report/DataList.vue')
+const RoleList = () => import('../components/order_management/RoleList.vue')
+const PermissionList = () => import('../components/order_management/PermissionList.vue')
+const GoodsList = () => import('../components/goods/GoodsList.vue')
+const SortList = () => import('../components/goods/SortList.vue')
+const GoodsSort = () => import('../components/goods/GoodsSort.vue')
+const OrderList = () => import('../components/goods_management/OrderList.vue')
 
+const AddGood = () => import('../components/goods/AddGood.vue')
 const routes = [
   {
     path: '/',
@@ -49,7 +50,12 @@ const routes = [
       {
         path: '/home/goodslist',
         name: 'GoodsList',
-        component: GoodsList
+        component: GoodsList,
+      },
+      {
+        path: '/goodslist/addGood',
+        name: 'AddGood',
+        component: AddGood
       },
       {
         path: '/home/sortlist',

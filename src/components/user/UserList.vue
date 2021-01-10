@@ -1,5 +1,13 @@
 <template>
   <div>
+    <!-- 面包屑 -->
+    <el-breadcrumb
+      separator-class="el-icon-arrow-right"
+    >
+      <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+      <el-breadcrumb-item>用户管理</el-breadcrumb-item>
+      <el-breadcrumb-item>用户列表</el-breadcrumb-item>
+    </el-breadcrumb>
     <!-- 搜索框 -->
     <div class="search_con">
       <el-input
@@ -7,7 +15,7 @@
         v-model="seachInputVal"
         clearable
         @clear="clearSearch"
-        @input='inputChange'
+        @input="inputChange"
       >
       </el-input>
 
@@ -187,8 +195,7 @@ export default {
       },
     };
   },
-  computed: {
-  },
+  computed: {},
   methods: {
     // 接收数据
     initMsg(nowPage, pages) {
@@ -222,15 +229,15 @@ export default {
       }
     },
 
-    // 清除筛选 
+    // 清除筛选
     clearSearch() {
-        this.showUserList = this.userList;
+      this.showUserList = this.userList;
     },
 
     // 筛选,当输入框没有内容,归零
     inputChange() {
-      if(!this.seachInputVal) {
-        this.clearSearch()
+      if (!this.seachInputVal) {
+        this.clearSearch();
       }
     },
 

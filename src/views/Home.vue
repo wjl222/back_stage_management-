@@ -43,7 +43,7 @@ export default {
       this.navIsCollapse = val
     },
     nowClickItemId(val) {
-      this.$router.push('/home/'+val)
+      this.$router.push('/home/' + val)
     },
     loginOut() {
       window.sessionStorage.removeItem('token');

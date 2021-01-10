@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import './assets/css/global.css'
 
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -13,6 +14,11 @@ Vue.component('tree',tree)
 import axios from 'axios'
 
 import '@/assets/fonts/iconfont.css'
+import 'quill/dist/quill.core.css' // import styles
+import 'quill/dist/quill.snow.css' // for snow theme
+import 'quill/dist/quill.bubble.css' // for bubble theme
+import VueQuillEditor from 'vue-quill-editor'
+Vue.use(VueQuillEditor)
 
 // 前置路由导航
 axios.interceptors.request.use(
@@ -30,7 +36,6 @@ axios.interceptors.request.use(
 
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 Vue.prototype.$http = axios;
-
 Vue.config.productionTip = false
 
 new Vue({

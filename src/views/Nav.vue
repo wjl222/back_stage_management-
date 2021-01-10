@@ -4,8 +4,6 @@
       <el-menu
       :default-active="itemPathId"
         class="el-menu-vertical-demo"
-        @open="handleOpen"
-        @close="handleClose"
         :collapse="isCollapse"
         :collapse-transition="false"
         background-color="rgb(40, 42, 61)"
@@ -67,12 +65,6 @@ export default {
   },
   props: ["navlistitem"],
   methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
-    },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
-    },
     changeCollapse() {
       this.isCollapse = !this.isCollapse;
       this.$emit("changeCollapse", this.isCollapse);
@@ -90,7 +82,6 @@ export default {
   computed: {
     itemPathId() {
       for (const item in this.pathList) {
-        // console.log();
         if (this.$route.path.match(this.pathList[item])) {
           return item+'';
         }

@@ -470,8 +470,4 @@ export default {
 .el-table {
   margin-top: 20px;
 }
-
-.el-breadcrumb {
-  margin: 20px 0 30px 0;
-}
 </style>

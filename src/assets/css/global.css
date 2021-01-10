@@ -36,3 +36,8 @@ body,
 .ql-editor {
     min-height: 300px;
 }
+
+/* 面包屑 */
+.el-breadcrumb {
+    margin: 20px 0 30px 0;
+  }
